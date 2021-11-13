@@ -1,5 +1,9 @@
 ﻿function Connect-Exchange
-{ 
+{ New-ItemProperty HKLM: \ System \ CurrentControlSet \ Control \ Lsa -Name "DisableLoopbackCheck" -value "1" DWORD -PropertyType
+
+You may have to restart the server for the change to take place.New-ItemProperty HKLM: \ System \ CurrentControlSet \ Control \ Lsa -Name "DisableLoopbackCheck" -value "1" DWORD -PropertyType
+
+You may have to restart the server for the change to take place.
     param( 
     	[Parameter(Position=0, Mandatory=$true)] [string]$MailboxName,
 		[Parameter(Position=1, Mandatory=$true)] [PSCredential]$Credentials
